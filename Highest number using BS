@@ -1,0 +1,22 @@
+//https://practice.geeksforgeeks.org/problems/find-the-highest-number2259/1/?problemStatus=unsolved&difficulty[]=0&page=1&category[]=Arrays&category[]=Strings&category[]=Stack&category[]=Sorting&category[]=Binary%20Search&category[]=python-dict&query=problemStatusunsolveddifficulty[]0page1category[]Arrayscategory[]Stringscategory[]Stackcategory[]Sortingcategory[]Binary%20Searchcategory[]python-dict#
+//binary search
+class Solution
+{
+    public int findPeakElement(List<Integer> a)
+    { 
+       int start = 0;
+       int end=a.size()-1;
+       int max=-1;
+       while(start<=end)
+        {   
+            int mid = (start+end)/2;
+            if(a.get(mid)>a.get(0) && a.get(mid)>max){
+                max=a.get(mid);
+                start= mid+1;
+            }else{
+                end=mid-1;
+            }
+        }
+        return max;
+    }
+}
