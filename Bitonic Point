@@ -1,0 +1,18 @@
+//https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1/?category[]=Arrays&category[]=Strings&category[]=Stack&category[]=Sorting&category[]=python-dict&category[]=Arrays&category[]=Strings&category[]=Stack&category[]=Sorting&category[]=python-dict&difficulty[]=0&page=1&query=category[]Arrayscategory[]Stringscategory[]Stackcategory[]Sortingcategory[]python-dictdifficulty[]0page1category[]Arrayscategory[]Stringscategory[]Stackcategory[]Sortingcategory[]python-dict#
+class Solution {
+    int findMaximum(int[] arr, int n) {
+        int start=0,end=arr.length-1;
+        int max=0;        
+        while(start<end){
+            int mid=start + (end-start)/2;
+            if(arr[mid]>arr[mid+1]){
+                end=mid;
+            }
+            else{
+                start=mid+1;
+            }
+        }
+        return arr[start];
+        // code here
+    }
+}
