@@ -1,0 +1,35 @@
+// here watching abstract class work
+// presence of an abstract method makes the class abstract, it is mandatory
+// every abstract method in the subclass must be @override in child class
+
+import java.util.Scanner; 
+abstract class abstractDemo{
+    void abstractDemo(){
+        System.out.println("one");
+    }
+     abstract public String example(int a);
+     abstract public String example2(float a);
+}
+
+class ChildOfAbstract extends abstractDemo{
+    @Override
+    public String example(int a){
+    return("it is A: "+a);    
+    }
+    @Override
+    public String example2(float b){
+    return("it is A in float: "+b);    
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        //System.out.println("Welcome to Online IDE!! Happy Coding :)");
+        ChildOfAbstract obj=new ChildOfAbstract();
+        //12System.out.println(obj.example(in.nextInt()));
+        System.out.println(obj.example2(in.nextFloat()));
+    
+    }
+}
