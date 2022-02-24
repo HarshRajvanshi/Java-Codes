@@ -1,0 +1,25 @@
+interface human{
+    int finalnumber=123;
+    void voice();     //abstract methods
+    void name();
+}
+
+class harsh implements human{
+    public void voice(){
+        System.out.println("am speaking");    //cant have other methods than our interface
+    }
+    public void name(){
+        System.out.println("i have a name");
+    } 
+}
+
+
+public class Main
+{
+    public static void main(String[] args) {
+             harsh a=new harsh();
+             a.name();
+             a.voice();
+             a.finalnumber=123123123;     //cant change the value as it is final
+    }
+}
