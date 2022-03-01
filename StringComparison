@@ -1,0 +1,13 @@
+
+public class Main
+{
+    public static void main(String[] args) {
+        String a="harsh";
+        String b="harsh";
+        System.out.println(a==b);    //checking the same reference or not
+        System.out.println(a.equals(b));   // checking similarity in value
+        b="rajvanshi";    //reference and value is change and new object is created in the string pool
+        System.out.println(a==b);
+        System.out.println(a.equals(b)); 
+    }
+}
