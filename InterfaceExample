@@ -1,0 +1,48 @@
+interface phoneTask{
+    void pickCall();
+    void myNumber(int number);
+}
+interface camera{
+    void takeSnap();
+    void recordVideo();
+}
+class cellphone{
+    void me(){
+    System.out.println("this is my phone");
+    }
+    }
+    
+    
+class Samsung extends cellphone implements camera,phoneTask{
+    @Override
+    public void takeSnap(){
+        System.out.println("thats a good snap");
+    }
+    @Override
+    public void pickCall(){
+        System.out.println("call picked");
+    }
+    @Override
+    public void myNumber(int number){
+        System.out.println("ur number is: "+number);
+    }
+    @Override
+    public void recordVideo(){
+        System.out.println("video recording");
+    }
+}    
+
+
+public class Main
+{
+    public static void main(String[] args) {
+        Samsung m30=new Samsung();
+        m30.pickCall();
+        m30.me();
+        m30.recordVideo();
+        m30.takeSnap();
+        m30.myNumber(213211312);
+        
+        
+    }
+}
