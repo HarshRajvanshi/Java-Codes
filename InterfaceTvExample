@@ -1,0 +1,29 @@
+interface TvRemote{
+    void changeChannel(int num);
+    void turnOff();
+}
+interface SmartTvRemote extends TvRemote{
+    void youtube();
+}
+class TV implements SmartTvRemote{
+    public void changeChannel(int channelNum){
+        System.out.println("changing channel to :"+channelNum);
+    }
+    public void turnOff(){
+        System.out.println("Tv turned OFF!");
+    }
+    public void youtube(){
+        System.out.println("open youtube");
+    }
+}
+
+
+public class Main
+{
+    public static void main(String[] args) {
+         TV mi=new TV();
+         mi.youtube();
+         mi.turnOff();
+         mi.changeChannel(21);
+    }
+}
