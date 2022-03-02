@@ -1,0 +1,38 @@
+class Monkey{
+    void jump(){
+        System.out.println("jumping");
+    }
+    void bite(){
+        System.out.println("biting");
+    }
+}
+
+interface BasicAnimal{
+    void eat();
+    void sleep();
+}
+
+class Human extends Monkey implements BasicAnimal{
+    public void eat(){
+        System.out.println("eating");
+    }
+    public void sleep(){
+        System.out.println("sleeping");
+    }
+}   
+
+public class Main
+{
+    public static void main(String[] args) {
+        Human harsh=new Human();
+        harsh.sleep();
+        harsh.eat();
+        harsh.jump();
+        harsh.bite();
+        Monkey bandar=new Human();      //polymorphism used here(dynamic dispatch)
+        bandar.jump();    //restricted this object to use only monkey class and not the interface 
+        
+        BasicAnimal raj = new Human();   ///referencce of interface and object of human class 
+        raj.eat();
+    }
+}
