@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        //System.out.println("a");
+        //int a=in.nextInt();
+        //System.out.println("b");
+        //int b=in.nextInt();
+        
+        
+        try{
+            int[] arr=new int[]{1,2,3};
+            System.out.println("enter the array index");
+            int index=in.nextInt();
+            System.out.println("enter the divisor");
+            int divisor=in.nextInt();
+            System.out.println(arr[index]/divisor);
+            //System.out.println("result = "+a/b);
+        }
+        catch(ArithmeticException e){
+            System.out.println("zero daalra hai");
+            System.out.println("ye hai teri galti *"+e+"*");
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+           System.out.println("ye hai teri galti *"+e+"*");
+        }
+    }
+}
