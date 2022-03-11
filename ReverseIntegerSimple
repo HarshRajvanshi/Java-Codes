@@ -1,0 +1,16 @@
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int a =123456;
+		int sum=0;
+		String aa="";
+		while(a!=0){
+		    int rem=a%10;
+		    aa+=rem;
+		    a/=10;
+		}
+		
+		System.out.println(aa);
+	}
+}
