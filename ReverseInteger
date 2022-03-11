@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int a =123456;
+		ArrayList<Integer> arr=new ArrayList<>();
+		int rem=0;
+		while(a!=0){
+		    rem=a%10;
+		    arr.add(rem);
+		    a/=10;
+		}
+		//arr.toArray();
+		String list = Arrays.toString(arr.toArray()).replace("[", "").replace("]", "").replace(", ","");
+		System.out.println(list);
+	}
+}
