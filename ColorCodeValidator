@@ -1,0 +1,66 @@
+import java.util.*;
+
+public class Source{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String input=in.nextLine();
+        int a=Integer.parseInt(input.substring(0,1));
+        if(a==1){
+            if(Source.validateHexCode(input.substring(2,input.length()))==1){
+                System.out.println("Valid Code");
+            }
+            else{
+                System.out.println("Invalid Code");
+            }
+        }
+        else if(a==2){
+           if(Source.validateDecimalCode(input)==1){
+                System.out.println("Valid Code");
+            }
+            else{
+                System.out.println("Invalid Code");
+            }
+        }
+        else{
+            System.out.println("Invalid choice");
+        }
+    }
+    
+        
+        static int validateDecimalCode(String str){
+            
+            String abc=str.substring(6,str.length()-1);
+            String[] arr=abc.split(",");
+            int a=Integer.parseInt(arr[0]);
+            int b=Integer.parseInt(arr[1]);
+            int c=Integer.parseInt(arr[2]);
+            if(a<=255 && a>=0 && b<=255 && b>=0 && c<=255 && c>=0 ){
+                return 1;
+            }
+            else{
+                return -1;
+            }
+            
+            
+        }
+        static int validateHexCode(String str){
+        String a=str.substring(1,str.length());
+        if(str.charAt(0)!='#' || a.length()!=6){
+            return -1;
+        }
+        else{
+        for(int i=1;i<a.length();i++){
+            char c=a.charAt(i);
+            if(c!='#'){
+                if(a.matches("[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}")){
+                    continue;
+                }
+                else{
+                    return -1;
+                }
+            }
+        }
+        return 1;
+        }
+    }
+    }
