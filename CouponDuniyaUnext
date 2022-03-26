@@ -1,0 +1,74 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Product {
+    String name;
+    double price;
+    String coupon;
+    public Product(String name,double price,String coupon){
+        this.name=name;
+        this.price=price;
+        this.coupon=coupon;
+    }
+  }
+
+class Validator{
+    public static double discount;
+   public String validateCoupon(Product p) throws Exception{
+       String[] arr=p.coupon.split("-");
+       if(arr.length==2){
+           double x=Double.parseDouble(arr[1]);
+           if(x>=10 && x<=25){
+               discount=x;
+           }
+           else{ return "no";}
+       }
+       return "Valid Coupon";
+   }
+   public double netPrice(Product p){
+       if(discount>0){
+       double netPrice=p.price-(p.price*(discount/100));
+       return netPrice;
+   }
+   else{
+       return p.price;
+   }
+       
+   }
+} 
+class InvalidCouponException extends Exception{
+    public InvalidCouponException(){
+        super("Invalid Coupon");
+    }
+    public InvalidCouponException(String msg){
+        super(msg);
+    }
+ 
+}
+
+public class Source {
+	public static void main(String args[] ) throws Exception {
+		Product obj= new Product("Iphone",25000,"IPhone-10");
+		Validator val=new Validator();
+		try{
+		    if(val.validateCoupon(obj)=="no"){
+		        throw new InvalidCouponException();
+		    }
+		    else{
+		        System.out.println("valCop = "+ val.validateCoupon(obj));
+		        System.out.println("price = "+val.netPrice(obj));
+		    }
+		}
+		catch(InvalidCouponException e){
+		    System.out.println(e.getMessage());
+		}
+	}
+}
