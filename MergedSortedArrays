@@ -1,6 +1,15 @@
 //https://leetcode.com/problems/merge-sorted-array/
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
+        if(m==1 && n==0)
+            System.out.print(nums1[0]);
+        else if(m==0 && n==1)
+        {
+            nums1[0]=nums2[0];
+            System.out.println(nums1);
+        }
+        else
+        {
         int j=0;
         for(int i=m;i<m+n;i++){
             if(j<n){            
@@ -9,5 +18,6 @@ class Solution {
         }            
         }
         Arrays.sort(nums1);
+    }
     }
 }
