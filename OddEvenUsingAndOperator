@@ -1,0 +1,13 @@
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int a=121;
+		if((a&1)==0){
+		    System.out.println("Hello World");
+		}
+		else{
+		    System.out.println("bye World");
+		}
+	}
+}
