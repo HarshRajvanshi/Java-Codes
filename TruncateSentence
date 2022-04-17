@@ -1,0 +1,19 @@
+//https://leetcode.com/problems/truncate-sentence
+class Solution {
+    public String truncateSentence(String s, int k) {
+       int word=0;
+       int len=s.length();
+        int i=0;
+        while(i<len){
+            if(s.charAt(i)==' '){
+                word++;
+            }
+            if(word==k){
+                return s.substring(0,i);
+            }
+            i++;
+        }
+        return s;
+        
+    }
+}
