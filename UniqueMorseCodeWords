@@ -1,0 +1,30 @@
+//https://leetcode.com/problems/unique-morse-code-words/
+
+class Solution {
+    public int uniqueMorseRepresentations(String[] words) {
+        String [] morse={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+       
+        
+        HashMap<Character,String> map=new HashMap<>();
+        char c='a';
+        
+        for(String i:morse){
+            map.put(c,i);
+            c++;
+        }
+        
+        HashSet<String> set=new HashSet<>();
+        String x="";
+        for(String s:words){
+            x="";
+            for(int j=0;j<s.length();j++){
+                char cc=s.charAt(j);
+                x+=map.get(cc);
+            }
+            set.add(x);
+        }
+       // System.out.println(map);
+        return set.size();
+        
+    }
+}
